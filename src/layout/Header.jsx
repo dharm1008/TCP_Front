@@ -1,19 +1,23 @@
 import { useEffect, useState } from "react";
 import Nav from "react-bootstrap/Nav";
 import logo from "../assets/images/har.govt.png";
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from "react-router-dom";
 
 const navLinks = [
-  { href: "/", title: "LandSchedule-License", icon: "bx bx-grid-alt", name: "LandSchedule-License" },
-  { href: "/", title: "Renewal Of License", icon: "bx bx-message-square-detail", name: "Renewal Of License" },
-  { href: "/", title: "LandSchedule-CLU", icon: "bx bx-detail", name: "LandSchedule-CLU" },
-  { href: "/", title: "UC Site Report", icon: "bx bx-table", name: "UC Site Report" },
-  { href: "/", title: "ISL Site Report", icon: "bx bx-table", name: "ISL Site Report" },
-  { href: "/", title: "MOL Site Report", icon: "bx bx-table", name: "MOL Site Report" },
-  { href: "/", title: "Filing of FIR", icon: "bx bx-user", name: "Filing of FIR" },
-  { href: "/", title: "Demolition", icon: "bx bx-user", name: "Demolition" },
-  { href: "/", title: "Sectoral Plan & Site or Planning Param", icon: "bx bx-window", name: "Sectoral Plan & Site or Planning Param" },
-  { href: "/", title: "Demarcation Plan", icon: "bx bx-window", name: "Demarcation Plan" },
+  { href: "/construction-existing", title: "Existing-construction", icon: "bx bx-grid-alt", name: "Existing construction" },
+  { href: "/const-violation", title: "Violation", icon: "bx bx-message-square-detail", name: "Violation" },
+  { href: "/demolitionexercise", title: "Demolition Exercise", icon: "bx bx-detail", name: "Demolition Exercise" },
+  { href: "/demolition-schedule", title: "Demoltion Schedule", icon: "bx bx-table", name: "Demoltion Schedule" },
+  { href: "/fir-memo", title: "Fir Memo", icon: "bx bx-grid-alt", name: "Fir Memo" },
+  { href: "/follow-up", title: "Follow UP", icon: "bx bx-message-square-detail", name: "Follow UP" },
+  { href: "/illegal-land", title: "Illegal land", icon: "bx bx-detail", name: "Illegal land" },
+  { href: "/independent-construction", title: "Independent Construction", icon: "bx bx-table", name: "Independent Construction" },
+  { href: "/misuse-land", title: "Misuse Land", icon: "bx bx-table", name: "Misuse Land" },
+  { href: "/misuse-report", title: "Misuse Report", icon: "bx bx-table", name: "Misuse Report" },
+  { href: "/natureof-violation", title: "Nature Violation", icon: "bx bx-user", name: "Nature Violation" },
+  { href: "/office-proposal", title: "Office Proposal", icon: "bx bx-user", name: "Office Proposal" },
+  { href: "/order-dtp", title: "Order Dtp", icon: "bx bx-window", name: "Order Dtp" },
+  { href: "/prm-competent-auth", title: "PRM", icon: "bx bx-window", name: "PRM" },
   { href: "/revenue-estate", title: "Revenue Estate", icon: "bx bx-table", name: "Revenue Estate" },
   { href: "/search-filling", title: "Search Filling", icon: "bx bx-table", name: "Search Filling" },
   { href: "/search-illegal", title: "Search Illegal Land", icon: "bx bx-table", name: "Search Illegal Land" },
@@ -21,11 +25,10 @@ const navLinks = [
   { href: "/sub-division", title: "Sub Division", icon: "bx bx-table", name: "Sub Division" },
   { href: "/tcp", title: "TCP", icon: "bx bx-table", name: "TCP" },
 ];
-
 const Header = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
-  const  {pathname} = useLocation();
-  console.log(pathname)
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
 
   const toggleNavbar = () => {
     setIsNavOpen(!isNavOpen);
@@ -75,7 +78,7 @@ const Header = () => {
             </a>
             <div className="nav_list">
               {navLinks.map((link, index) => (
-                <Nav.Link key={index} className={pathname === link.href ? "active" : ""} href={link.href} title={link.title}>
+                <Nav.Link key={index} className={pathname === link.href ? "active" : ""} as={"button"} title={link.title} onClick={() => navigate(link.href)}>
                   <i className={link.icon + " nav_icon"} /> <span className="nav_name">{link.name}</span>
                 </Nav.Link>
               ))}
