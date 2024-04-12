@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Nav from "react-bootstrap/Nav";
 import logo from "../assets/images/har.govt.png";
 import { useLocation, useNavigate } from "react-router-dom";
 
@@ -78,15 +77,15 @@ const Header = () => {
             </a>
             <div className="nav_list">
               {navLinks.map((link, index) => (
-                <Nav.Link key={index} className={pathname === link.href ? "active" : ""} as={"button"} title={link.title} onClick={() => navigate(link.href)}>
-                  <i className={link.icon + " nav_icon"} /> <span className="nav_name">{link.name}</span>
-                </Nav.Link>
+                <button key={index} className={`nav-link ${pathname === link.href ? "active" : ""}`} title={link.title} onClick={() => navigate(link.href)}>
+                  <i className={`${link.icon} nav_icon`} /> <span className="nav_name">{link.name}</span>
+                </button>
               ))}
             </div>
           </div>
-          <Nav.Link href="#">
+          <a href="#" className="nav-link">
             <i className="bx bx-log-out nav_icon" /> <span className="nav_name">SignOut</span>
-          </Nav.Link>
+          </a>
         </nav>
       </div>
       {/*-------------- header end ---------------------*/}
