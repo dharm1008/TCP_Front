@@ -23,6 +23,7 @@ import SearchUC from "../page/SearchUC";
 import SubDivision from "../page/SubDivision";
 import Tcp from "../page/Tcp";
 import AddUser from "../page/AddUser";
+import User from "../page/report/User";
 
 const Private = () => {
   let routes = useRoutes([
@@ -47,6 +48,12 @@ const Private = () => {
     { path: "/sub-division", element: <SubDivision /> },
     { path: "/tcp", element: <Tcp /> },
     { path: "/add-user", element: <AddUser /> },
+    {
+      path: "/report/",
+      children: [
+        { path: "user", element: <User /> },
+      ],
+    },
   ]);
 
   return (
