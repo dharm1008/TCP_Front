@@ -1,0 +1,75 @@
+@media screen and (min-width: 768px) {
+  .header {
+    height: calc(var(--header-height) + 1rem);
+    padding: 0 2rem 0 calc(var(--nav-width) + 2rem);
+  }
+
+  .header_img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .header_img img {
+    width: 45px;
+  }
+
+  .l-navbar {
+    left: 0;
+    padding: 1rem 1rem 0 0;
+  }
+
+  .show {
+    width: calc(var(--nav-width) + 156px);
+  }
+
+  .body-pd {
+    padding-left: calc(var(--nav-width) + 188px);
+  }
+
+  .UserId {
+    font-size: medium;
+    font-weight: 700;
+    margin-right: 5px;
+  }
+
+  .fa-sign-out {
+    font-size: 25px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo img {
+    width: 55px;
+  }
+
+  .navbar-nav {
+    margin-left: 0%;
+  }
+
+  .text {
+    font-size: 8px;
+    padding: 2px;
+  }
+
+  .title {
+    font-size: 10px;
+  }
+
+  p.text {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width: 510px) {
+  .login-box {
+    padding: 10px 30px;
+    /* margin: 20px; */
+  }
+}
+
+@media only screen and (max-width: 415px) {
+  .login-box {
+    padding: 10px 25px;
+    /* margin: 15px; */
+  }
+}
