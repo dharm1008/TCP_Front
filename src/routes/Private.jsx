@@ -24,6 +24,7 @@ import SubDivision from "../page/SubDivision";
 import Tcp from "../page/Tcp";
 import AddUser from "../page/AddUser";
 import User from "../page/report/User";
+import Summary from "../page/report/Summary";
 
 const Private = () => {
   let routes = useRoutes([
@@ -52,6 +53,7 @@ const Private = () => {
       path: "/report/",
       children: [
         { path: "user", element: <User /> },
+        { path: "summary", element: <Summary /> },
       ],
     },
   ]);
