@@ -1,3 +1,4 @@
+@import "./dropdown.css";
 .orange {
   background-color: rgb(255, 225, 170);
   padding: inherit;
@@ -6,10 +7,6 @@
 .blue {
   background-color: #b4e0ff;
   padding: inherit;
-}
-
-button {
-  background-color: #094e7f;
 }
 
 .navbar {
