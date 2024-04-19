@@ -224,7 +224,7 @@ ul.breadcrumb li {
   font-size: 14px;
 }
 
-ul.breadcrumb li+li:before {
+ul.breadcrumb li + li:before {
   padding: 8px;
   color: black;
   content: "/\00a0";
@@ -251,7 +251,7 @@ ul.breadcrumb li a:hover {
   margin-left: 4px;
 }
 
-thead>tr>th {
+thead > tr > th {
   background-color: #094e7f !important;
   color: white !important;
 }
@@ -349,8 +349,8 @@ hr {
   border: 2px solid #094e7f;
 }
 
-.input-field:focus~label,
-.input-field:valid~label {
+.input-field:focus ~ label,
+.input-field:valid ~ label {
   top: -8px;
   left: 12px;
   font-size: 12px;
@@ -359,7 +359,7 @@ hr {
   padding: 0 5px;
 }
 
-.input-field:valid~label {
+.input-field:valid ~ label {
   color: #555;
 }
 
@@ -472,7 +472,7 @@ hr {
   color: #333;
 }
 
-.sign-up p>a {
+.sign-up p > a {
   text-decoration: none;
 }
 
@@ -533,3 +533,24 @@ hr {
   background-color: rgba(33, 40, 50, 0.03);
   border-bottom: 1px solid rgba(33, 40, 50, 0.125);
 }
+
+.point-flow {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+}
+
+.point-img {
+  margin: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 100px;
+  height: 100px;
+}
+
+.point-box {
+  border: 3px solid rgb(0, 0, 0);
+  padding: 20px;
+}
+
+

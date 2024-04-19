@@ -5,6 +5,9 @@ import { Button } from "primereact/button";
 import { Dropdown } from "primereact/dropdown";
 import reportAPI from "../../api/report";
 import { RadioButton } from "primereact/radiobutton";
+import PointCertificate from "./PointCertificate";
+import PointHistory from "./PointHistory";
+
 const Change = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -14,11 +17,14 @@ const Change = () => {
 
   const [selectedItem, setSelectedItem] = useState(null);
 
+  const [certificate, setCertificate] = useState({ show: false, UID : null });
+  const [history, setHistory] = useState({ show: false, UID: null });
+
   useEffect(() => {
     (async () => {
       try {
         const f1 = await reportAPI.getAllDistrict();
-        console.log(f1.data.data);
+        // console.log(f1.data.data);
         setFilterData({ districts: f1.data.data });
       } catch (error) {
         console.log(error);
@@ -35,6 +41,7 @@ const Change = () => {
         params.append("pageNumber", 1);
         params.append("page", 1);
         const response = await reportAPI.getFilteredChanges(params);
+        console.log(response.data.data);
         setData(response.data.data);
         setLoading(false);
       } catch (error) {
@@ -251,9 +258,11 @@ const Change = () => {
         <Column header="Action Upon Detection(Demolished/Approved etc.)" body={() => "NA"} />
         <Column header="Demolition Status(Implemented/Not implemented)" body={() => "NA"} />
         <Column header="Demolition Date" body={() => "NA"} />
-        <Column header="Point Report" body={() => <Button className="rounded" label="Point Report" size="small" />} />
-        <Column header="Point History" body={() => <Button className="rounded" label="Point History" size="small" />} />
+        <Column header="Point Report" body={({ UID }) => <Button className="rounded" label="Point Report" size="small" onClick={() => setCertificate({show : true, UID })} />} />
+        <Column header="Point History" body={({ UID }) => <Button className="rounded" label="Point History" size="small" onClick={() => setHistory({ show: true, UID })} />} />
       </DataTable>
+      {certificate.show ? <PointCertificate visible={certificate} setVisible={setCertificate} /> : null}
+      {history.show ? <PointHistory visible={history} setVisible={setHistory} /> : null}
     </div>
   );
 };

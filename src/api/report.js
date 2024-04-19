@@ -8,6 +8,7 @@ const reportAPI = {
   getFilteredSummary: (values) => axios.post(`${API_BASE_URL}/dataForSurveyReport`, values),
   getAllDistrict: () => axios.get(`${API_BASE_URL}/getAllDistrict`),
   getFilteredChanges: (values) => axios.post(`${API_BASE_URL}/dataWithFilter`, values),
+  getUIDHistory : (values) => axios.post(`${API_BASE_URL}/getUIDHistory`, values)
 };
 
 export default reportAPI;
