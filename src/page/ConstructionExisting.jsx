@@ -5,7 +5,7 @@ const ConstructionExisting = () => {
     <div>
   <div className="col " style={{backgroundColor: "rgb(255, 255, 255)", marginTop: "100px;"}}>
     <div className="title fw-bold text-center"
-        style={{backgroundColor: "#094E7F", padding: "10px", marginTop: "100px", color:" white;"}}>Construction Existing
+        style={{backgroundColor: "#094E7F", padding: "10px", marginTop: "100px", color:"white"}}>Construction Existing
         Before Material Date
     </div>
     <div className="text text-start fst-italic"

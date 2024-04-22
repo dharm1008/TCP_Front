@@ -5,7 +5,7 @@ const DemolitionSchedule = () => {
     <div>
         <div className="col " style={{backgroundColor: "rgb(255, 255, 255)", marginTop: "100px;"}}>
         <div className="title fw-bold text-center"
-            style={{backgroundColor: "#094E7F", padding: "10px", marginTop: "100px", color: "white;"}}>Proposed Demolition Schedule
+            style={{backgroundColor: "#094E7F", padding: "10px", marginTop: "100px", color: "white"}}>Proposed Demolition Schedule
         </div>
         <div className="text text-start fst-italic"
             style={{backgroundColor: "rgb(237, 237, 237)", paddingTop: "10px", fontSize: "small", color: "rgb(0, 117, 243);"}}>

@@ -4,17 +4,17 @@ const OrderDTP = () => {
   return (
     <div className="col " style={{backgroundColor: "rgb(255, 255, 255)", marginTop: "100px"}}>
     <div className="title fw-bold text-center"
-        style={{backgroundColor: "#094E7F", padding: "10px", marginTop: "100px", Color: "white"}}>Office Proposal by JE
+        style={{backgroundColor: "#094E7F", padding: "10px", marginTop: "100px", color: "white"}}>Office Proposal by JE
     </div>
     <div className="text text-start fst-italic"
-        style={{backgroundColor: "rgb(237, 237, 237)", paddingTop: "10px", fontSize: "small", Color: "rgb(0, 117, 243)"}}>
+        style={{backgroundColor: "rgb(237, 237, 237)", paddingTop: "10px", fontSize: "small", color: "rgb(0, 117, 243)"}}>
         <ul className="breadcrumb" style={{margin: "0"}}>
             <li><a href="#">UC Site Report</a></li>
             <li>New</li>
         </ul>
     </div>
     <div className="text text-end fst-italic mb-3"
-        style={{backgroundColor: "rgb(237, 237, 237)", paddingBottom: "10px", fontSize: "small", Color: "rgb(0, 117, 243)"}}>
+        style={{backgroundColor: "rgb(237, 237, 237)", paddingBottom: "10px", fontSize: "small", color: "rgb(0, 117, 243)"}}>
         <span>Change Role</span><span className="space">|</span>
         <span>Unit Converter</span><span className="space">|</span>
         <span>Help?</span>
